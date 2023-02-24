@@ -18,7 +18,7 @@ public class Server {
 
                 new Thread(() -> {
                     String request = phone.readLine();
-                    System.out.println("Request: " + request);
+                    System.out.println("Город: " + request);
                     String response = (int) (Math.random() * 30 - 10) + "";
                     try {
                         Thread.sleep(4000);
@@ -26,7 +26,7 @@ public class Server {
                         throw new RuntimeException(e);
                     }
                     phone.writeLine(response);
-                    System.out.println("Response: " + response);
+                    System.out.println("Температура: " + response + " °C");
                     try{ phone.close(); } catch (IOException e ) { }
 
                 }).start();

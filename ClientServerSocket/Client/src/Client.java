@@ -7,11 +7,11 @@ public class Client {
         try (Phone phone = new Phone("127.0.0.1", 8000)) {
             System.out.println("Connected to server");
             String request = "Tver";
-            System.out.println("Request: " + request);
+            System.out.println("Город: " + request);
 
             phone.writeLine(request);
             String response = phone.readLine();
-            System.out.println("Response: " + response);
+            System.out.println("Температура: " + response + " °C");
 
         } catch (IOException e){
             e.printStackTrace();
